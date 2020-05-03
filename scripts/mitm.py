@@ -97,7 +97,7 @@ if __name__ == "__main__":
         if target is None:
             if sys.platform == "darwin":
                 target = "dofus"
-            elif sys.platform == "win32":
+            elif sys.platform == "win32" or sys.platform == "linux":
                 target = "Dofus.exe"
             else:
                 assert False, "Your platform requires a pid to attach"
