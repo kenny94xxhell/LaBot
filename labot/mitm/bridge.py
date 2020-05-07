@@ -224,10 +224,10 @@ class InjectorBridgeHandler(BridgeHandler):
                 self.dumper.dump(msg)
             self.other[origin].sendall(msg.bytes())
 
-            self.handle_message(parsedMsg, origin)
+            self.handle_message(msg.id, parsedMsg)
             msg = Msg.fromRaw(self.buf[origin], from_client)
 
             time.sleep(0.005)
 
-    def handle_message(self, m, o):
+    def handle_message(self, i, m):
         pass
